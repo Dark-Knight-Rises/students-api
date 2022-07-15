@@ -5,6 +5,7 @@ import cors from 'cors'
 
 const app = express()
 app.use(cors())
+app.use(express.static("frontend"))
 
 const PORT = 8000
 const __filename = fileURLToPath(import.meta.url)
