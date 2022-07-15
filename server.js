@@ -4,12 +4,16 @@ import { fileURLToPath } from "url";
 import cors from 'cors'
 
 const app = express()
+// to allow users to use the api locally
 app.use(cors())
+// to serve all the static files like main.js and css
 app.use(express.static("frontend"))
 
 const PORT = 8000
+// to use __dirname since we have to give path like unix
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+// Procfile must be saved with utf-8 encoding if you're using windows
 
 const arr = {
     'piyush': {
@@ -92,11 +96,11 @@ const arr = {
     }
 }
 
-// get
+// get homepage
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/frontend', 'index.html'))
 })
-
+// get the names if someone enters directly to url
 app.get('/api/:name', (req, res) => {
     const sName = req.params.name.toLowerCase()
     if (arr[sName]) {
