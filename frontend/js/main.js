@@ -1,7 +1,7 @@
 document.querySelector('button').addEventListener('click', apiRequest)
 
 async function apiRequest() {
-    const sName = document.querySelector('input').value
+    const sName = document.querySelector('input').value.toLowerCase()
     try {
         const response = await fetch(`https://students-api-piyush.herokuapp.com/api/${sName}`)
         const data = await response.json()
