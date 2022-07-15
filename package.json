@@ -1,0 +1,13 @@
+{
+  "name": "student-name-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "piyush gaur",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
