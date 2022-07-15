@@ -1,7 +1,9 @@
 import express from "express";
 import path from 'path'
 import { fileURLToPath } from "url";
+import cors from 'cors'
 
+app.use(cors())
 const app = express()
 const PORT = 8000
 const __filename = fileURLToPath(import.meta.url)
